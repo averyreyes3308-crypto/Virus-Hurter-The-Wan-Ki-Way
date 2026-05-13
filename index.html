@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virus Hunter - The Wan Ki Way</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🦠 VIRUS HUNTER 🦠</h1>
+            <p class="subtitle">The Wan Ki Way</p>
+        </header>
+
+        <!-- Game Stats -->
+        <div class="stats-panel">
+            <div class="stat">
+                <span class="stat-label">Score</span>
+                <span class="stat-value" id="score">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Health</span>
+                <span class="stat-value" id="health">100</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Level</span>
+                <span class="stat-value" id="level">1</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Viruses Left</span>
+                <span class="stat-value" id="viruses-left">0</span>
+            </div>
+        </div>
+
+        <!-- Main Game Area -->
+        <div class="game-wrapper">
+            <!-- Menu Screen -->
+            <div id="menu-screen" class="screen active">
+                <div class="menu-content">
+                    <h2>Welcome, Virus Hunter!</h2>
+                    <p>🎮 Hunt down viruses before they spread!</p>
+                    <p>⚡ Click or tap viruses to eliminate them</p>
+                    <p>💊 Collect power-ups for bonuses</p>
+                    <p>⚠️ Avoid getting infected!</p>
+                    <div class="difficulty-selector">
+                        <h3>Select Difficulty:</h3>
+                        <button class="difficulty-btn" data-difficulty="easy">😊 Easy</button>
+                        <button class="difficulty-btn" data-difficulty="normal">😐 Normal</button>
+                        <button class="difficulty-btn" data-difficulty="hard">😈 Hard</button>
+                    </div>
+                    <button id="start-game-btn" class="btn btn-primary" style="display:none;">START GAME</button>
+                </div>
+            </div>
+
+            <!-- Game Screen -->
+            <div id="game-screen" class="screen">
+                <div id="game-board" class="game-board"></div>
+                <div class="controls">
+                    <button id="pause-btn" class="btn btn-secondary">Pause</button>
+                    <button id="quit-btn" class="btn btn-secondary">Quit</button>
+                </div>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="gameover-screen" class="screen">
+                <div class="gameover-content">
+                    <h2 id="gameover-title">Game Over!</h2>
+                    <div class="gameover-stats">
+                        <p>Final Score: <span id="final-score">0</span></p>
+                        <p>Level Reached: <span id="final-level">1</span></p>
+                        <p>Viruses Eliminated: <span id="final-viruses">0</span></p>
+                    </div>
+                    <button id="restart-btn" class="btn btn-primary">Play Again</button>
+                    <button id="menu-btn" class="btn btn-secondary">Main Menu</button>
+                </div>
+            </div>
+
+            <!-- Pause Screen -->
+            <div id="pause-screen" class="screen">
+                <div class="pause-content">
+                    <h2>PAUSED</h2>
+                    <p>Game is paused. Click to resume.</p>
+                    <button id="resume-btn" class="btn btn-primary">Resume</button>
+                    <button id="pause-menu-btn" class="btn btn-secondary">Main Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Virus Hunter © 2026 | Hunt Responsibly 🛡️</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
